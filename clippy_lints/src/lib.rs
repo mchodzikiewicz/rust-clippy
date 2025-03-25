@@ -78,6 +78,7 @@ mod almost_complete_range;
 mod approx_const;
 mod arbitrary_source_item_ordering;
 mod arc_with_non_send_sync;
+mod array_chunks_and_windows;
 mod as_conversions;
 mod asm_syntax;
 mod assertions_on_constants;
@@ -984,5 +985,6 @@ pub fn register_lints(store: &mut rustc_lint::LintStore, conf: &'static Conf) {
     store.register_late_pass(move |_| Box::new(non_std_lazy_statics::NonStdLazyStatic::new(conf)));
     store.register_late_pass(|_| Box::new(manual_option_as_slice::ManualOptionAsSlice::new(conf)));
     store.register_late_pass(|_| Box::new(single_option_map::SingleOptionMap));
+    store.register_late_pass(|_| Box::new(array_chunks_and_windows::ArrayChunksAndWindows));
     // add lints here, do not remove this comment, it's used in `new_lint`
 }
