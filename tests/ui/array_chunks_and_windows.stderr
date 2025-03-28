@@ -1,0 +1,29 @@
+error: use .array_windows() instead of .windows(2)
+  --> tests/ui/array_chunks_and_windows.rs:6:25
+   |
+LL |     for window in slice.windows(2) {
+   |                         ^^^^^^^^^^
+   |
+   = note: `-D clippy::array-chunks-and-windows` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::array_chunks_and_windows)]`
+
+error: use .array_windows() instead of .windows(i)
+  --> tests/ui/array_chunks_and_windows.rs:15:25
+   |
+LL |     for window in slice.windows(i) {
+   |                         ^^^^^^^^^^
+
+error: use .array_chunks() instead of .chunks(2)
+  --> tests/ui/array_chunks_and_windows.rs:23:24
+   |
+LL |     for chunk in slice.chunks(2) {
+   |                        ^^^^^^^^^
+
+error: use .array_chunks() instead of .chunks(i)
+  --> tests/ui/array_chunks_and_windows.rs:32:24
+   |
+LL |     for chunk in slice.chunks(i) {
+   |                        ^^^^^^^^^
+
+error: aborting due to 4 previous errors
+
